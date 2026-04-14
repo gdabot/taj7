@@ -3,9 +3,10 @@ from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandle
 import logging
 import json
 from datetime import datetime
+import os
 
 # ====== CONFIG ======
-BOT_TOKEN = "8793285062:AAEI9e9BB5rRe9RTrNhYRlME8DdPjs-ND9I"
+TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_USERNAME = "@taj7onway"
 
 # ====== LOGGING ======
@@ -46,7 +47,6 @@ def start(update: Update, context: CallbackContext):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    # Image URL (you can host on Imgur or your server)
     image_url = "https://img.freepik.com/premium-vector/stylish-welcome-lettering-modern-banner-design_1188421-3705.jpg"
 
     caption = f"""
@@ -65,14 +65,6 @@ def start(update: Update, context: CallbackContext):
         reply_markup=reply_markup,
         parse_mode="Markdown"
     )
-
-# ====== BUTTON HANDLER ======
-def button_handler(update: Update, context: CallbackContext):
-    query = update.callback_query
-    query.answer()
-
-    if query.data == "bonus":
-        query.edit_message_text("🎁 Bonus unlocked! Stay active to receive more rewards.")
 
 # ====== MESSAGE TRACKING ======
 def track_messages(update: Update, context: CallbackContext):
