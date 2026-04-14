@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 
 # ====== CONFIG ======
-TOKEN = "8793285062:AAEI9e9BB5rRe9RTrNhYRlME8DdPjs-ND9I"
+BOT_TOKEN = "8793285062:AAEI9e9BB5rRe9RTrNhYRlME8DdPjs-ND9I"
 CHANNEL_USERNAME = "@taj7onway"
 
 # ====== LOGGING ======
