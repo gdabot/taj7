@@ -1,6 +1,6 @@
 services:
   - type: worker
-    name: telegram-bot
+    name: taj7
     env: python
     buildCommand: ""
     startCommand: python bot.py
